@@ -4,7 +4,13 @@ const { mostrarMenu, pausa } = require("./helpers/mensaje");
 console.clear();
 
 const main = async () => {
-  mostrarMenu();
+  let opt = "";
+
+  do {
+    opt = await mostrarMenu();
+
+    await pausa();
+  } while (opt != "0");
 
   //pausa();
 };
