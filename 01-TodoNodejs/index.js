@@ -27,11 +27,19 @@ const main = async () => {
         break;
 
       case "2":
-        console.log(tareas.listadoArr);
+        tareas.listadoCompleto();
+        break;
+
+      case "3":
+        tareas.listadoPendientes(true);
+        break;
+
+      case "4":
+        tareas.listadoPendientes(false);
         break;
     }
 
-    // guardarDB(tareas.listadoArr);
+    guardarDB(tareas.listadoArr);
 
     await pausa();
   } while (opt != "0");
